@@ -40,6 +40,8 @@ policy:
     fully_conv_gqcnn_config:
       im_height: 480
       im_width: 640
+    crop_height: 96
+    crop_width: 96
 
   # visualization
   policy_vis:
