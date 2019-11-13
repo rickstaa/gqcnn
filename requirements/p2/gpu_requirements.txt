@@ -3,7 +3,7 @@ autolab-perception
 meshrender==0.0.9
 visualization
 numpy
-opencv-python
+opencv-contrib-python
 scipy
 matplotlib<=2.2.0
 tensorflow-gpu<=1.13.1

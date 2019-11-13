@@ -2,7 +2,7 @@ autolab-core
 autolab-perception
 visualization
 numpy
-opencv-python
+opencv-contrib-python
 scipy
 matplotlib<=2.2.0
 tensorflow-gpu<=1.13.1
