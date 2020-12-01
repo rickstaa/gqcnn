@@ -28,11 +28,8 @@ Author
 ------
 Vishal Satish & Jeff Mahler
 """
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 from collections import OrderedDict
+import errno
 from functools import reduce
 import json
 import math
@@ -242,12 +239,16 @@ class GQCNNTF(object):
                     os.path.join(model_dir, GQCNNFilenames.IM_MEAN))
                 self._im_std = np.load(
                     os.path.join(model_dir, GQCNNFilenames.IM_STD))
-            except IOError:
-                # Support for legacy file naming convention.
-                self._im_mean = np.load(
-                    os.path.join(model_dir, GQCNNFilenames.LEG_MEAN))
-                self._im_std = np.load(
-                    os.path.join(model_dir, GQCNNFilenames.LEG_STD))
+            except IOError as e:  # Python 2.6,7/3+ compatibility.
+                if e.errno == errno.ENOENT:  # File not found.
+                    # Support for legacy file naming convention.
+                    self._im_mean = np.load(
+                        os.path.join(model_dir, GQCNNFilenames.LEG_MEAN))
+                    self._im_std = np.load(
+                        os.path.join(model_dir, GQCNNFilenames.LEG_STD))
+                else:
+                    # Some other IOError.
+                    raise e
             self._pose_mean = np.load(
                 os.path.join(model_dir, GQCNNFilenames.POSE_MEAN))
             self._pose_std = np.load(

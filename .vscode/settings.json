@@ -1,0 +1,21 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#9ac36b",
+        "activityBar.activeBorder": "#40739f",
+        "activityBar.background": "#9ac36b",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#40739f",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "tab.activeBorder": "#9ac36b",
+        "titleBar.activeBackground": "#81b348",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#81b34899",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#81b348",
+    "python.autoComplete.extraPaths": [
+        "/home/ricks/Development/personal/panda_autograsp_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}
